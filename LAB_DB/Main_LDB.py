@@ -100,45 +100,6 @@ def view_command():
 		list1.insert(END, row)
 
 
-def search_command():
-	list1.delete(0, END)
-	for row in db.search(first_text.get(), last_text.get(), sex_text.get(), date_text.get(), telf_text.get(), mail_text.get()):
-		list1.insert(END, row)
-
-
-def add_command():
-	db.insert(first_text.get(), last_text.get(), sex_text.get(), date_text.get(), telf_text.get(), mail_text.get())
-	list1.delete(0, END)
-	list1.insert(END, (first_text.get(), last_text.get(), sex_text.get(), date_text.get(), telf_text.get(), mail_text.get()))
-	paci_data = (first_text.get(), last_text.get(), sex_text.get(), date_text.get(), telf_text.get(), mail_text.get())
-	fi = create_pc_file(paci_data)
-	clear = clear_fields()
-	d = view_command()
-
-
-def delete_command():
-	db.delete(selected_tuple[0])
-	d = view_command()
-	clear = clear_fields()
-
-
-def update_command():
-	db.update(selected_tuple[0], first_text.get(), last_text.get(), sex_text.get(), date_text.get(), telf_text.get(), mail_text.get())
-	u = view_command()
-
-def create_pc_file(pac_data):
-	name = pac_data[0]
-	last_name = pac_data[1]
-	gender = pac_data[2]
-	birth = pac_data[3]
-	
-	#Create samples file
-	file_name = last_name + '_' + name + '.txt'
-	with open(file_name, 'w+') as f:
-		f.write('Nom: {0}\nCognom: {1}\nGènere: {2}\nData de naixement: {3}\n'.format(name, last_name, gender, birth))
-		f.write('***Antropomètrics***\nDia:\nPes:\nAlçada:\n***Perímetres***\nBraç:\nCintura:\nCanell:\nMalucs:\n'.format())
-		f.write('***Indexs masa corporal***\nIMC:\nPes ideal:\nGreix:\nRCC:\n'.format())
-	f.close()
 	
 def center_window(width, height):
 	# get screen width and height
