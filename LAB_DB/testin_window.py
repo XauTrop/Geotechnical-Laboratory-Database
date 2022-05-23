@@ -388,7 +388,7 @@ b9.grid(row=1, column=7, columnspan=2, rowspan=2, padx=5, pady=5)
 
 ###############################################################
 # Enter your api key here 
-api_key = 'AIzaSyBTgeWj46ufq_A_yCpoClbNpil2dOKRCrs'
+api_key = 'YOUR GOOGLE API KEY'
 
 # url variable store url 
 url = 'https://maps.googleapis.com/maps/api/staticmap?'
