@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Main_LDB.py'],
-             pathex=['C:\\Users\\Jaume\\Documents\\Lab_DB'],
+             pathex=['Your execution path'],
              binaries=[],
              datas=[],
              hiddenimports=[],
